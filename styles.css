@@ -1,0 +1,516 @@
+/* Importar fuentes de Google Fonts */
+@import url('https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&display=swap');
+
+:root {
+    --primary-color: #007bff;
+    --secondary-color: #6c757d;
+    --background-light: #f8f9fa;
+    --text-dark: #343a40;
+}
+
+body {
+    font-family: 'Roboto', sans-serif;
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    background-color: var(--background-light); /* Color de respaldo */
+    color: var(--text-dark);
+
+    /* --- Estilos de Imagen de Fondo General del Body --- */
+    background-image: url('tienda2.jpg'); /* Tu imagen de fondo elegida */
+    background-size: cover; /* Cubre todo el viewport */
+    background-attachment: fixed; /* Mantiene el fondo fijo al hacer scroll */
+    background-position: center center; /* Centra la imagen */
+    background-repeat: no-repeat; /* No repite la imagen */
+}
+
+main {
+    background-color: rgba(255, 255, 255, 0.9); /* Fondo blanco ligeramente transparente para el contenido */
+    margin: 0 auto;
+    max-width: 1200px; /* Ancho deseado para tu contenido */
+    box-shadow: 0 0 15px rgba(0,0,0,0.1); /* Opcional: añade una sombra sutil */
+    min-height: calc(100vh - 150px); /* Ajusta según la altura del encabezado/pie de página */
+    padding-top: 1px; /* Pequeño padding para evitar el colapso de márgenes */
+}
+
+/* Header */
+header {
+    background-color: var(--primary-color);
+    color: white;
+    padding: 1rem 0;
+}
+
+nav {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 0 1rem;
+}
+
+.logo a {
+    color: white;
+    text-decoration: none;
+    font-size: 1.8rem;
+    font-weight: 700;
+}
+
+nav ul {
+    list-style: none;
+    margin: 0;
+    padding: 0;
+    display: flex;
+}
+
+nav ul li {
+    margin-left: 20px;
+}
+
+nav ul li a {
+    color: white;
+    text-decoration: none;
+    font-size: 1.1rem;
+    transition: color 0.3s ease;
+}
+
+nav ul li a:hover {
+    color: #e2e6ea;
+}
+
+
+/* Asegura que las secciones tengan un fondo sólido sobre la imagen del body */
+.hero-section,
+.products-section,
+.reviews-section,
+.contact-section {
+    background-color: white; /* Fondo blanco sólido para el contenido */
+    border-radius: 8px; /* Opcional: esquinas sutilmente redondeadas */
+    margin-bottom: 30px; /* Espacio entre secciones */
+    box-shadow: 0 2px 10px rgba(0,0,0,0.05); /* Opcional: añade sombra a las secciones */
+    padding: 50px 20px; /* Padding general para secciones */
+    max-width: 1160px; /* Para que quepa dentro de main 1200px - 2*20px de padding */
+    margin-left: auto;
+    margin-right: auto;
+}
+
+/* Hero Section */
+.hero-section {
+    background-image: url('tienda.jpg'); /* Imagen de fondo específica para la sección hero */
+    background-size: cover;
+    background-position: center;
+    color: white;
+    text-align: center;
+    padding: 100px 20px;
+    height: 400px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    /* Superposición para la legibilidad del texto en la imagen del hero */
+    background-color: rgba(0, 0, 0, 0.5); /* Semi-transparente para ver la imagen de fondo */
+    background-blend-mode: overlay; /* Mezcla el color de fondo con la imagen */
+}
+
+.hero-section h1 {
+    font-size: 3rem;
+    margin-bottom: 15px;
+    text-shadow: 2px 2px 4px rgba(0,0,0,0.7); /* Sombra para mejor legibilidad */
+}
+
+.hero-section p {
+    font-size: 1.2rem;
+    margin-bottom: 30px;
+    text-shadow: 1px 1px 3px rgba(0,0,0,0.7); /* Sombra para mejor legibilidad */
+}
+
+.btn {
+    background-color: #28a745;
+    color: white;
+    padding: 10px 20px;
+    text-decoration: none;
+    border-radius: 5px;
+    transition: background-color 0.3s ease;
+}
+
+.btn:hover {
+    background-color: #218838;
+}
+
+/* Footer */
+footer {
+    background-color: var(--text-dark);
+    color: white;
+    text-align: center;
+    padding: 1.5rem 0;
+    margin-top: 50px;
+}
+
+/* Reviews Section */
+.reviews-section {
+    background-color: #e9ecef; /* Un color ligeramente diferente para distinguirla */
+}
+
+.reviews-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); /* Columnas responsivas */
+    gap: 30px;
+}
+
+.review-card {
+    background-color: white;
+    border-radius: 8px;
+    padding: 25px;
+    box-shadow: 0 2px 10px rgba(0,0,0,0.08);
+    text-align: center;
+}
+
+.review-card p {
+    font-style: italic;
+    margin-bottom: 15px;
+    color: #555;
+}
+
+.review-card .author {
+    font-weight: bold;
+    color: var(--primary-color);
+}
+
+/* Contact Section */
+.contact-section {
+    max-width: 800px;
+}
+
+.contact-section h2 {
+    text-align: center;
+    margin-bottom: 30px;
+    color: var(--primary-color);
+}
+
+.contact-section form {
+    display: flex;
+    flex-direction: column;
+}
+
+.contact-section label {
+    margin-bottom: 8px;
+    font-weight: bold;
+}
+
+.contact-section input,
+.contact-section textarea {
+    padding: 10px;
+    margin-bottom: 20px;
+    border: 1px solid #ddd;
+    border-radius: 5px;
+    font-size: 1rem;
+}
+
+.contact-section button {
+    background-color: var(--primary-color);
+    color: white;
+    border: none;
+    padding: 12px 25px;
+    border-radius: 5px;
+    cursor: pointer;
+    font-size: 1.1rem;
+    transition: background-color 0.3s ease;
+}
+
+.contact-section button:hover {
+    background-color: #0056b3;
+}
+
+/* Media Queries para la sección de contacto */
+@media (max-width: 600px) {
+    .contact-section {
+        padding: 30px 15px;
+    }
+    .contact-section input,
+    .contact-section textarea,
+    .contact-section button {
+        font-size: 0.9rem;
+        padding: 8px;
+    }
+}
+
+/* Carrito Modal */
+.cart-modal {
+    display: none; /* Oculto por defecto */
+    position: fixed; /* Posición fija para cubrir la pantalla */
+    z-index: 1000; /* Por encima de otros elementos */
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    overflow: auto; /* Habilitar scroll si el contenido es demasiado largo */
+    background-color: rgba(0,0,0,0.4); /* Fondo semi-transparente */
+}
+
+.cart-content {
+    background-color: #fefefe;
+    margin: 5% auto; /* 5% arriba y centrado horizontalmente */
+    padding: 30px;
+    border: 1px solid #888;
+    width: 80%; /* Ancho del modal */
+    max-width: 600px; /* Ancho máximo */
+    border-radius: 8px;
+    position: relative;
+    box-shadow: 0 4px 8px rgba(0,0,0,0.2);
+}
+
+.close-button {
+    color: #aaa;
+    float: right;
+    font-size: 28px;
+    font-weight: bold;
+    cursor: pointer;
+}
+
+.close-button:hover,
+.close-button:focus {
+    color: black;
+    text-decoration: none;
+}
+
+#cart-items {
+    margin-top: 20px;
+    border-top: 1px solid #eee;
+    padding-top: 15px;
+    max-height: 400px; /* Altura máxima para scroll */
+    overflow-y: auto;
+}
+
+.cart-item {
+    display: flex;
+    align-items: center;
+    margin-bottom: 15px;
+    padding-bottom: 15px;
+    border-bottom: 1px dashed #eee;
+}
+
+.cart-item:last-child { /* Elimina el borde inferior del último ítem del carrito */
+    border-bottom: none;
+    padding-bottom: 0;
+}
+
+.cart-item img {
+    width: 70px; /* Tamaño fijo para las imágenes del carrito */
+    height: 70px;
+    object-fit: cover; /* Ajusta la imagen sin distorsión */
+    margin-right: 15px;
+    border-radius: 5px;
+}
+
+.cart-item div {
+    flex-grow: 1;
+}
+
+.cart-item h4 {
+    margin: 0 0 5px 0;
+    font-size: 1.1rem;
+}
+
+.cart-item p {
+    margin: 0;
+    font-size: 0.9rem;
+    color: #555;
+}
+
+.cart-item .item-quantity {
+    width: 60px;
+    padding: 5px;
+    border: 1px solid #ddd;
+    border-radius: 4px;
+    text-align: center;
+    margin-left: 10px;
+}
+
+.cart-item .remove-item {
+    background-color: #dc3545;
+    color: white;
+    border: none;
+    padding: 5px 10px;
+    border-radius: 5px;
+    cursor: pointer;
+    font-size: 0.85rem;
+    transition: background-color 0.3s ease;
+}
+
+.cart-item .remove-item:hover {
+    background-color: #c82333;
+}
+
+.cart-summary {
+    border-top: 2px solid #eee;
+    padding-top: 20px;
+    margin-top: 20px;
+    text-align: right;
+}
+
+.cart-summary p {
+    font-size: 1.4rem;
+    font-weight: bold;
+    margin-bottom: 15px;
+}
+
+.checkout-button {
+    background-color: #28a745;
+    color: white;
+    border: none;
+    padding: 12px 25px;
+    border-radius: 5px;
+    cursor: pointer;
+    font-size: 1.1rem;
+    transition: background-color 0.3s ease;
+}
+
+.checkout-button:hover {
+    background-color: #218838;
+}
+
+/* Lista de Productos y Tarjetas */
+.products-section h2 {
+    text-align: center;
+    margin-bottom: 40px;
+    color: var(--primary-color);
+}
+
+.product-list {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(220px, 1fr)); /* Ajusta minmax para el ancho deseado de la tarjeta */
+    gap: 25px; /* Espaciado entre las tarjetas de producto */
+    justify-content: center; /* Centra las tarjetas si no llenan la fila */
+}
+
+.product-card {
+    background-color: white;
+    border: 1px solid #e0e0e0;
+    border-radius: 8px;
+    padding: 15px;
+    text-align: center;
+    box-shadow: 0 2px 8px rgba(0,0,0,0.05);
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between; /* Empuja el botón hacia abajo */
+    transition: transform 0.2s ease-in-out, box-shadow 0.2s ease-in-out;
+}
+
+.product-card:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 5px 15px rgba(0,0,0,0.1);
+}
+
+.product-card img {
+    max-width: 100%; /* Asegura que la imagen quepa dentro de la tarjeta */
+    height: 180px; /* Altura fija para simetría */
+    object-fit: contain; /* Escala la imagen de forma adecuada */
+    margin-bottom: 15px;
+    background-color: #fff; /* Asegura un fondo blanco para imágenes con transparencia */
+    border-bottom: 1px solid #eee;
+    padding-bottom: 10px;
+}
+
+.product-card h3 {
+    font-size: 1.1rem;
+    color: var(--text-dark);
+    margin-bottom: 10px;
+    height: 3em; /* Limita la altura del título */
+    overflow: hidden;
+    display: -webkit-box;
+    -webkit-line-clamp: 2;
+    -webkit-box-orient: vertical;
+}
+
+.product-card p {
+    font-size: 0.9rem;
+    color: #666;
+    margin-bottom: 15px;
+    flex-grow: 1; /* Permite que la descripción ocupe el espacio disponible */
+    height: 4.5em; /* Limita la altura de la descripción */
+    overflow: hidden;
+    display: -webkit-box;
+    -webkit-line-clamp: 3;
+    -webkit-box-orient: vertical;
+}
+
+.product-card .price {
+    font-size: 1.3rem;
+    font-weight: 700;
+    color: var(--primary-color);
+    margin-bottom: 15px;
+}
+
+.product-card button {
+    background-color: var(--primary-color);
+    color: white;
+    border: none;
+    padding: 10px 15px;
+    border-radius: 5px;
+    cursor: pointer;
+    font-size: 1rem;
+    transition: background-color 0.3s ease;
+    width: 100%; /* Botón de ancho completo */
+}
+
+.product-card button:hover {
+    background-color: #0056b3;
+}
+
+/* Estilo de los enlaces del pie de página */
+.footer-links {
+    margin-top: 20px;
+    padding-top: 20px;
+    border-top: 1px solid rgba(255, 255, 255, 0.2);
+}
+
+.footer-links h4 {
+    color: white;
+    margin-bottom: 15px;
+    font-size: 1.2rem;
+}
+
+.footer-links ul {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+    display: flex;
+    flex-wrap: wrap; /* Permite que los enlaces se ajusten en pantallas más pequeñas */
+    justify-content: center;
+}
+
+.footer-links ul li {
+    margin: 0 10px 10px 10px; /* Espaciado entre enlaces */
+}
+
+.footer-links ul li a {
+    color: #a0a0a0;
+    text-decoration: none;
+    font-size: 0.95rem;
+    transition: color 0.3s ease;
+}
+
+.footer-links ul li a:hover {
+    color: white;
+}
+
+/* Media Query para navegación en pantallas pequeñas */
+@media (max-width: 768px) {
+    nav {
+        flex-direction: column;
+        padding-top: 1rem;
+    }
+
+    nav .logo {
+        margin-bottom: 1rem;
+    }
+
+    nav ul {
+        flex-direction: column;
+        align-items: center;
+    }
+
+    nav ul li {
+        margin: 0.5rem 0;
+    }
+}
